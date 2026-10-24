@@ -23,6 +23,7 @@ func main() {
 		return
 	}
 
+	fmt.Printf("Введите %d чисел/числа:\n", amount)
 	for i := 0; i < amount; i++ {
 		_, err := fmt.Scan(&currNum)
 		if err != nil {
