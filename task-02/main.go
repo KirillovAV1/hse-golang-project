@@ -40,11 +40,18 @@ func main() {
 	fmt.Println("1. Является ли число положительным/отрицательным?")
 	fmt.Println("2. Число четное/нечетное")
 	fmt.Println("3. Делится ли число на 3 и 5?")
-	fmt.Println("\nВведите свое число:")
+	fmt.Print("\nВведите свое число: ")
 
-	fmt.Scan(&inputNum)
-	fmt.Println("1." + isPositive(inputNum))
-	fmt.Println("2." + isEven(inputNum))
-	fmt.Println("3." + isDiv(inputNum))
+	_, err := fmt.Scan(&inputNum)
+
+	if err != nil {
+		fmt.Println("Некорректный ввод:", err)
+		return
+	}
+
+	fmt.Print("\n")
+	fmt.Println("1.", isPositive(inputNum))
+	fmt.Println("2.", isEven(inputNum))
+	fmt.Println("3.", isDiv(inputNum))
 
 }
